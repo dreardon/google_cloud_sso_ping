@@ -50,3 +50,10 @@ The following resources from Ping can also be used to establish this connection.
 
 ### IDP-Initiated
 * https://console.cloud.google.com
+
+| Scenario    | Example  |
+|:--- |----: |
+|  Ping SSO Login w/ Ping MFA   | ![](ping_images/ping_ping_mfa.gif) |
+|  Ping SSO Login w/ Google MFA   | ![](ping_images/ping_google_mfa.gif) |
+|  Ping SSO Login w/ Ping and Google MFA   | ![](ping_images/ping_both_mfa.gif) |
+|  Ping SSO Login w/ No MFA   | ![](ping_images/ping_no_mfa.gif) |
