@@ -5,8 +5,8 @@
 This documentation provides a seamless integration between PingOne SSO Authentication and Google Cloud Single Sign-On (SSO). With this integration, users can use their Ping credentials to sign in to Google Cloud services and applications, without the need for a separate set of Google Cloud credentials. This saves time and effort for both end-users and IT administrators, who can manage user access to Google Cloud resources through Ping Authentication.
 
 The following resources from Ping can also be used to establish this connection.
-* [PingFederate Google Workspace Connection](https://docs.pingidentity.com/r/en-us/pingfederate-google-workspace-connector)
-* [PingOne Google Workspace Connection](https://docs.pingidentity.com/r/en-us/pingone/pingone_t_create_google_workspace_connection)
+* [PingFederate Google Workspace Connection](https://docs.pingidentity.com/integrations/google/google_workspace_provisioner/pf_google_workspace_connector.html)
+* [PingOne Google Workspace Connection](https://docs.pingidentity.com/pingone/integrations/p1_create_google_workspace_connection.html)
 
 
 ## Single Sign On (SSO)
@@ -37,7 +37,7 @@ The following resources from Ping can also be used to establish this connection.
 ## Provisioning
 |     |      |
 |:--- |----: |
-|<ul type="square"><li>Inside of the Ping Identity Console, go to Connections -> Provisioning and create a new connection</li><li>Search for the Google Workspace connection and add it to your account</li><li>The OAuth configuration is necessary to set up credentials that will be used to provision users. The guidance can be followed here: <a href="https://docs.pingidentity.com/r/en-us/pingfederate-google-workspace-connector/pingfederate_google_workforce_connector_obtain_an_application_name-_client_id-_and_secret">OAuth Setup in Google and Ping Identity</a></li><li>Now that you have a connection established, you'll need to configure the rules for provisioning. Inside of the Ping Identity Console, go to Connections -> Provisioning and add a new rule</li><li>NOTE: To obfuscate passwords being assigned to the Google Cloud Identity accounts when synced, I used the following expression: <br> `#string.join({#crypto.hmacHexDigest(id, '[secret_salt_value]','HmacSHA384'),'#1'},'')`</ul>|  <img src="ping_images/workspace_addin.png" width="800" /> <br /> <img src="ping_images/provisioning_overview.png" width="800" /> <br /> <img src="ping_images/provisioning_filter.png" width="800" /> <br /> <img src="ping_images/provisioning_attributes.png" width="800" /> <br /> <img src="ping_images/provisioning_password_expression.png" width="800" />|
+|<ul type="square"><li>Inside of the Ping Identity Console, go to Connections -> Provisioning and create a new connection</li><li>Search for the Google Workspace connection and add it to your account</li><li>The OAuth configuration is necessary to set up credentials that will be used to provision users. The guidance can be followed here: <a href="https://docs.pingidentity.com/integrations/google/google_workspace_provisioner/pf_google_workforce_connector_generate_authorized_oauth_20_tokens.html">OAuth Setup in Google and Ping Identity</a></li><li>Now that you have a connection established, you'll need to configure the rules for provisioning. Inside of the Ping Identity Console, go to Connections -> Provisioning and add a new rule</li><li>NOTE: To obfuscate passwords being assigned to the Google Cloud Identity accounts when synced, I used the following expression: <br> `#string.join({#crypto.hmacHexDigest(id, '[secret_salt_value]','HmacSHA384'),'#1'},'')`</ul>|  <img src="ping_images/workspace_addin.png" width="800" /> <br /> <img src="ping_images/provisioning_overview.png" width="800" /> <br /> <img src="ping_images/provisioning_filter.png" width="800" /> <br /> <img src="ping_images/provisioning_attributes.png" width="800" /> <br /> <img src="ping_images/provisioning_password_expression.png" width="800" />|
 
 
 
